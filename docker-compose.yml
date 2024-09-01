@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: go_gin_app
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/pkg/mod
+    ports:
+      - "8080:8080"
+    environment:
+      - GO111MODULE=on
+      - DB_SERVER=sqlserver
+      - DB_USER=sa
+      - DB_PASSWORD=r00tP@ss3014
+      - DB_NAME=master
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=r00tP@ss3014
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+volumes:
+  sqlserver_data:

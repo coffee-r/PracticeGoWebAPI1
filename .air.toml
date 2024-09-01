@@ -1,0 +1,11 @@
+# airの設定ファイル
+
+[build]
+# 出力されるバイナリファイル
+bin = "bin/main" 
+cmd = "go build -o ./bin/main main.go" 
+full_bin = "APP_ENV=dev ./bin/main" 
+
+[watch]
+# 監視するディレクトリ
+includes = ["."]
