@@ -10,6 +10,9 @@ COPY go.mod go.sum ./
 # airをインストール (新しいリポジトリを使用)
 RUN go install github.com/air-verse/air@latest
 
+# デバッガのインストール
+RUN go install github.com/go-delve/delve/cmd/dlv@latest
+
 # Download dependencies
 RUN go mod download
 
@@ -20,4 +23,4 @@ COPY . .
 EXPOSE 8080
 
 # Command to run the application
-CMD ["air"]
+CMD ["air", "-c", ".air.toml"]

@@ -3,8 +3,8 @@
 [build]
 # 出力されるバイナリファイル
 bin = "bin/main" 
-cmd = "go build -o ./bin/main main.go" 
-full_bin = "APP_ENV=dev ./bin/main" 
+cmd = "go build -gcflags=\"all=-N -l\" -o ./bin/main ."
+full_bin = "dlv --headless=true --listen=:40000 --api-version=2 --accept-multiclient exec --continue ./bin/main"
 
 [watch]
 # 監視するディレクトリ
