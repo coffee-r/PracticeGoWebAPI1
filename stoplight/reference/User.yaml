@@ -1,0 +1,110 @@
+openapi: 3.1.0
+x-stoplight:
+  id: hbzeloi2ht71s
+info:
+  title: Task
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /users/:
+    parameters: []
+    get:
+      summary: ユーザーを取得する
+      tags: []
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                Get User Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: '1997-10-31'
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+        '404':
+          description: User Not Found
+      operationId: get-users-userId
+      description: Retrieve the information of the user with the matching user ID.
+    post:
+      summary: ''
+      operationId: post-tasks
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+              required:
+                - name
+      description: ''
+  '/users/{user_id}':
+    parameters:
+      - schema:
+          type: number
+        name: user_id
+        in: path
+        required: true
+    delete:
+      summary: ''
+      operationId: delete-users-user_id
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: ''
+      operationId: put-users-user_id
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      examples:
+        - id: 142
+          firstName: Alice
+          lastName: Smith
+          email: alice.smith@gmail.com
+          dateOfBirth: '1997-10-31'
+          emailVerified: true
+          signUpDate: '2019-08-24'
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the given user.
+        name:
+          type: string
+        email:
+          type: string
+      required:
+        - id
+        - name
+        - email
+      x-stoplight:
+        id: 1bv9hnlp2v7xg

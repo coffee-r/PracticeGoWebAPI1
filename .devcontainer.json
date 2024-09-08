@@ -1,0 +1,22 @@
+{
+	"name": "Go Development Container",
+	"dockerComposeFile": ["./docker-compose.yml"],
+	"workspaceFolder": "/app",
+	"postCreateCommand": "go mod tidy && air",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go",  // Goの拡張
+				"ms-vscode-remote.remote-containers",
+				"golangci-lint.golangci-lint",  // Linter
+				"ms-vscode.go-fmt"  // フォーマッター
+			],
+			"settings": {
+				"go.toolsManagement.autoUpdate": true,
+				"files.autoSave": "afterDelay",
+				"go.debuggerPort": 2345,  // デバッガーのポート
+				"go.formatTool": "goimports"  // フォーマッターの指定
+			}
+	  	}
+	}
+}
