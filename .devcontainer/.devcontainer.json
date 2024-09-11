@@ -13,7 +13,7 @@
 			"settings": {
 				"go.toolsManagement.autoUpdate": true,
 				"files.autoSave": "afterDelay",
-				"go.debuggerPort": 40000,  // デバッガーのポート
+				"go.debuggerPort": 12345,  // デバッガーのポート
 				"go.formatTool": "goimports"  // フォーマッターの指定
 			}
 	  	}
