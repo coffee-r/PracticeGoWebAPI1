@@ -10,6 +10,10 @@
 * ドキュメント管理サーバ更改する?
 * 
 
+## ディレクトリ構成
+https://github.com/golang-standards/project-layout
+参考に
+
 
 ## ライブラリ選定
 

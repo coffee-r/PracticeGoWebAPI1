@@ -1,8 +1,7 @@
 {
-	"name": "Go Development Container",
-	"dockerComposeFile": ["./docker-compose.yml"],
-	"workspaceFolder": "/app",
-	"postCreateCommand": "go mod tidy && air",
+	"name": "PracticeGoWebAPI1",
+	"dockerComposeFile": ["../docker/local/docker-compose.yml"],
+	"workspaceFolder": "/usr/src/app",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -14,7 +13,7 @@
 			"settings": {
 				"go.toolsManagement.autoUpdate": true,
 				"files.autoSave": "afterDelay",
-				"go.debuggerPort": 2345,  // デバッガーのポート
+				"go.debuggerPort": 40000,  // デバッガーのポート
 				"go.formatTool": "goimports"  // フォーマッターの指定
 			}
 	  	}
