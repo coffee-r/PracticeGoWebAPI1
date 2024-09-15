@@ -33,6 +33,12 @@ paths:
           description: User Not Found
       operationId: get-users-userId
       description: Retrieve the information of the user with the matching user ID.
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: XDEBUG_TRIGGER
+      x-extension-1: aaaa
     post:
       summary: ''
       operationId: post-tasks

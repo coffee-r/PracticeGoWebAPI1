@@ -41,6 +41,10 @@ https://github.com/golang-standards/project-layout
     * Jenkinsサーバ新しく立てるか?
     * アクセスログ追うのにX-Forwarded-Forヘッダ使う?
 
+## HTTPアクセスログ
+
+## 
+
 ## エラー発生率の検証
 
 ## パフォーマンスの検証
